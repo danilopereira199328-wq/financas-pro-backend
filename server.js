@@ -25,6 +25,8 @@ app.get('/api/status', (req, res) => {
     res.json({ status: 'Online', message: 'Finanças PRO Backend a funcionar a 100%!' });
 });
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 // Endpoint para Buscar Transações Reais da BD
 app.get('/api/transactions/:userId', async (req, res) => {
     try {
